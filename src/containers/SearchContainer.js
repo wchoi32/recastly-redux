@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 import handleSearchChange from '../actions/search.js';
 // var SearchContainer = () => {};
 const mapStateToProps = state => {
-  return { handleSearchChange(state) }
+  return { search: state.handleSearchInputChange }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    onClick: () => {
-      dispatch(handleSearchChange)
+    handleSearchInputChange: (item) => {
+      dispatch(handleSearchChange(item))
     }
   }
 }
